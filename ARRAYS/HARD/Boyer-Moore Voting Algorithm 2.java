@@ -1,6 +1,3 @@
-import java.util.List;
-import java.util.ArrayList;
-
 class Solution {
     public List<Integer> majorityElement(int[] nums) {
         int a = Integer.MIN_VALUE, b = Integer.MIN_VALUE, c1 = 0, c2 = 0;
