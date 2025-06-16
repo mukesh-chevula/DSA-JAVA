@@ -8,11 +8,8 @@ public class Solution {
             result.add(currentSum);
             return;
         }
-
-        // Include the current element
         calculateSubsetSums(nums, index + 1, currentSum + nums[index], result);
 
-        // Exclude the current element
         calculateSubsetSums(nums, index + 1, currentSum, result);
     }
 }
