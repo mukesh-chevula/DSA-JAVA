@@ -2,6 +2,7 @@ public class Solution {
     public static void SumOfAllSubsets(int[] nums) {
         List<Integer> result = new ArrayList<>();
         calculateSubsetSums(nums, 0, 0, result);
+        return result;
     }
     private static void calculateSubsetSums(int[] nums, int index, int currentSum, List<Integer> result) {
         if (index == nums.length) {
