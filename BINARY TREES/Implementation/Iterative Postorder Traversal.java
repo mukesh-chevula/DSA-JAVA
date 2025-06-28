@@ -22,13 +22,14 @@ class Solution {
         while(node!=null || !stack.empty()){
             if(node!=null){
                 stack.push(node);
-                res.addFirst(node.val);
+                res.add(node.val);
                 node=node.right;
             }else{
                 node=stack.pop();
                 node=node.left;
             }
         }
+        Collections.reverse(res);
         return res;
     }
 }
