@@ -47,3 +47,35 @@ class Solution {
         return res;
     }
 }
+
+class Recursive {
+    private static class Pair {
+        int val, depth;
+        Pair(int val, int depth) {
+            this.val = val;
+            this.depth = depth;
+        }
+    }
+
+    public List<Integer> topView(TreeNode root) {
+        Map<Integer, Pair> topNodes = new TreeMap<>();
+        dfs(root, 0, 0, topNodes);
+
+        List<Integer> result = new ArrayList<>();
+        for (Pair pair : topNodes.values()) {
+            result.add(pair.val);
+        }
+        return result;
+    }
+
+    private void dfs(TreeNode node, int hd, int depth, Map<Integer, Pair> map) {
+        if (node == null) return;
+
+        if (!map.containsKey(hd) || depth < map.get(hd).depth) {
+            map.put(hd, new Pair(node.val, depth));
+        }
+
+        dfs(node.left, hd - 1, depth + 1, map);
+        dfs(node.right, hd + 1, depth + 1, map);
+    }
+}

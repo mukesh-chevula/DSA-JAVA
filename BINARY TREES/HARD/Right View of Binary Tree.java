@@ -33,3 +33,18 @@ class Solution {
         return res;
     }
 }
+
+class Recursive{
+    public List<Integer> rightView(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        dfsRight(root, 0, res);
+        return res;
+    }
+
+    private void dfsRight(TreeNode node, int depth, List<Integer> res) {
+        if (node == null) return;
+        if (depth == res.size()) res.add(node.val);
+        dfsRight(node.right, depth + 1, res);
+        dfsRight(node.left, depth + 1, res);
+    }
+}

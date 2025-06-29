@@ -21,17 +21,30 @@ class Solution {
         q.offer(root);
         while (!q.isEmpty()) {
             int level = q.size();
-            int temp=-1;
             
             for (int i = 0; i < level; i++) {
                 Node node = q.poll();
                 if (node.left != null) q.offer(node.left);
                 if (node.right != null) q.offer(node.right);
-                if(temp==-1) temp=node.data;
+                if(i==0) res.add(node.data);
             }
-            
-            res.add(temp);
         }
         return res;
     }
+}
+
+class Recursive{
+    public List<Integer> leftView(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        dfsLeft(root, 0, res);
+        return res;
+    }
+
+    private void dfsLeft(TreeNode node, int depth, List<Integer> res) {
+        if (node == null) return;
+        if (depth == res.size()) res.add(node.val);
+        dfsLeft(node.left, depth + 1, res);
+        dfsLeft(node.right, depth + 1, res);
+    }
+
 }
