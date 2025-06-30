@@ -25,26 +25,4 @@ class Solution {
         }
         return res;
     }
-
-    public List<Integer> morrisInorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
-        TreeNode curr = root;
-        
-        while (curr != null) {
-            if (curr.left == null) {
-                res.add(curr.val);
-                curr = curr.right;
-            } else {
-                TreeNode pre = curr.left;
-                while (pre.right != null) {
-                    pre = pre.right;
-                }
-                pre.right = curr;
-                TreeNode temp = curr;
-                curr = curr.left;
-                temp.left = null;
-            }
-        }
-        return res;
-    }
 }
