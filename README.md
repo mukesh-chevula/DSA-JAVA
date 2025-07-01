@@ -14,26 +14,26 @@ The sheet is thoughtfully divided into **18 progressive steps**, each focusing o
 
 ## 🧾 Striver's A2Z DSA Sheet - Topic Overview
 
-| S.No | Topic Name                              | Difficulty to Learn | Interview Scope |
-| ---- | --------------------------------------- | ------------------- | --------------- |
-| 1    | Learn the Basics                        | Easy                | Low             |
-| 2    | Sorting Techniques                      | Easy                | Medium          |
-| 3    | Arrays (Easy → Hard)                    | Medium              | High            |
-| 4    | Binary Search (1D/2D/Search Space)      | Easy                | Medium          |
-| 5    | Strings (Basic + Intermediate)          | Easy                | Medium          |
-| 6    | Linked Lists (SLL, DLL, Hard)           | Medium              | Medium          |
-| 7    | Backtracking (Pattern Based)            | Medium              | High            |
-| 8    | Bit Manipulation                        | Medium              | Medium          |
-| 9    | Stack and Queues (Infix/Postfix, Impl.) | Medium              | Medium          |
-| 10   | Sliding Window & Two Pointer            | Easy                | High            |
-| 11   | Heaps (MinHeap/MaxHeap, Impl.)          | Medium              | Medium          |
-| 12   | Greedy Algorithms                       | Hard                | High            |
-| 13   | Binary Trees (Traversals + Problems)    | Medium              | Medium          |
-| 14   | Binary Search Trees                     | Medium              | Low             |
-| 15   | Graphs (BFS, DFS, MST, Shortest Path)   | Hard                | High            |
-| 16   | Dynamic Programming (Classic Patterns)  | Hard                | Very High       |
-| 17   | Tries (Prefix Trees)                    | Hard                | Medium          |
-| 18   | Advanced Strings                        | Hard                | Medium          |
+| S.No | Topic Name                   | Difficulty to Learn | Interview Scope | Problems Solved |
+| ---- | ---------------------------- | ------------------- | --------------- | --------------- |
+| 1    | Learn the Basics             | Easy                | Low             | -               |
+| 2    | Sorting Techniques           | Easy                | Medium          | 7               |
+| 3    | Arrays                       | Medium              | High            | 39              |
+| 4    | Binary Search                | Easy                | Medium          | 29              |
+| 5    | Strings                      | Easy                | Medium          | 16              |
+| 6    | Linked Lists                 | Medium              | Medium          | 24              |
+| 7    | Backtracking                 | Medium              | High            | 45              |
+| 8    | Bit Manipulation             | Medium              | Medium          | 17              |
+| 9    | Stack and Queues             | Medium              | Medium          | 27              |
+| 10   | Sliding Window & Two Pointer | Easy                | High            | 24              |
+| 11   | Heaps / Priority Queues      | Medium              | Medium          | 19              |
+| 12   | Greedy Algorithms            | Hard                | High            | 39              |
+| 13   | Binary Trees                 | Medium              | Medium          | 47              |
+| 14   | Binary Search Trees          | Medium              | Low             | 0               |
+| 15   | Graphs                       | Hard                | High            | 0               |
+| 16   | Dynamic Programming          | Hard                | Very High       | 0               |
+| 17   | Tries / Prefix Trees         | Hard                | Medium          | 0               |
+|      | **Total**                    |                     |                 | **334**         |
 
 ---
 
