@@ -1,55 +1,52 @@
-
 class Solution {
     public TreeNode canMerge(List<TreeNode> trees) {
         HashMap<Integer, TreeNode> map = new HashMap<>();
-        for(TreeNode t : trees){
+        HashSet<Integer> leaves = new HashSet<>();
+        
+        for (TreeNode t : trees) {
             map.put(t.val, t);
+            if (t.left != null) leaves.add(t.left.val);
+            if (t.right != null) leaves.add(t.right.val);
         }
         
-        for(TreeNode t : trees){
-            if(map.containsKey(t.val)){
-                merger(t, map);
-            }
-        }
-
-        
-        if(map.size() != 1) return null;
-        else {
-            for(int c : map.keySet()) {
-                if(isValidBST(map.get(c))){
-                    return map.get(c);
-                } else return null;
+        TreeNode root = null;
+        for (TreeNode t : trees) {
+            if (!leaves.contains(t.val)) {
+                if (root != null) return null;
+                root = t;
             }
         }
         
-      return null;
+        if (root == null) return null;
         
+        if (!merge(root, map)) return null;
         
+        if (map.size() != 1 || !isValidBST(root)) return null;
+        
+        return root;
     }
     
-    void merger(TreeNode t, HashMap<Integer, TreeNode> map){
-        map.remove(t.val);
-        if(t.left != null && map.containsKey(t.left.val) ){
-            merger(map.get(t.left.val), map);
-            t.left = map.get(t.left.val);
-            map.remove(t.left.val);
+    private boolean merge(TreeNode t, HashMap<Integer, TreeNode> map) {
+        if (t.left != null && map.containsKey(t.left.val)) {
+            t.left = map.remove(t.left.val);
+            if (!merge(t.left, map)) return false;
         }
         
-        if(t.right!=null &&  map.containsKey(t.right.val)  ){
-            merger(map.get(t.right.val), map);
-            t.right = map.get(t.right.val);
-            map.remove(t.right.val);
+        if (t.right != null && map.containsKey(t.right.val)) {
+            t.right = map.remove(t.right.val);
+            if (!merge(t.right, map)) return false;
         }
-        map.put(t.val, t);
+        
+        return true;
     }
     
-    public boolean isValidBST(TreeNode root) {
-        return helper(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    private boolean isValidBST(TreeNode root) {
+        return validate(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
     
-    public boolean helper(TreeNode root, long min, long max){
-        if(root == null) return true;
-        if(root.val <= min || root.val >= max) return false;
-        return helper(root.left, min, root.val) && helper(root.right, root.val, max);
+    private boolean validate(TreeNode root, long min, long max) {
+        if (root == null) return true;
+        if (root.val <= min || root.val >= max) return false;
+        return validate(root.left, min, root.val) && validate(root.right, root.val, max);
     }
 }
