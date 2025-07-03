@@ -29,11 +29,11 @@ The sheet is thoughtfully divided into **18 progressive steps**, each focusing o
 | 11   | Heaps / Priority Queues      | Medium              | Medium          | 19              |
 | 12   | Greedy Algorithms            | Hard                | High            | 39              |
 | 13   | Binary Trees                 | Medium              | Medium          | 47              |
-| 14   | Binary Search Trees          | Medium              | Low             | 0               |
+| 14   | Binary Search Trees          | Medium              | Low             | 27              |
 | 15   | Graphs                       | Hard                | High            | 0               |
 | 16   | Dynamic Programming          | Hard                | Very High       | 0               |
 | 17   | Tries / Prefix Trees         | Hard                | Medium          | 0               |
-|      | **Total**                    |                     |                 | **334**         |
+|      | **Total**                    |                     |                 | **360**         |
 
 ---
 

@@ -1,28 +1,27 @@
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-class Solution {
-    public TreeNode bstFromPreorder(int[] arr) {
-        return dfs(arr,Integer.MAX_VALUE,new int[1]);
+/*class Node{
+    int data;
+    Node left,right;
+    Node(int d)
+    {
+        data=d;
+        left=right=null;
     }
-    public TreeNode dfs(int[] arr, int ub,int[] i){
-        if(i[0]==arr.length || arr[i[0]]>ub) return null;
+}*/
 
-        TreeNode root=new TreeNode(arr[i[0]++]);
-        root.left=dfs(arr,root.val,i);
-        root.right=dfs(arr,ub,i);
+// Function should return the root of the bst formed using postorder traversal.
+class GFG {
+    public Node constructTree(int post[], int n) {
+        // Add your code here.
+        int[] i=new int[1];
+        i[0]=n-1;
+        return dfs(post,Integer.MIN_VALUE,Integer.MAX_VALUE,i);
+    }
+    public Node dfs(int[] arr, int lb,int ub,int[] i){
+        if (i[0] < 0 || arr[i[0]] < lb || arr[i[0]] > ub) return null;
+
+        Node root=new Node(arr[i[0]--]);
+        root.right=dfs(arr,root.data,ub,i);
+        root.left=dfs(arr,lb,root.data,i);
         return root;
     }
 }
